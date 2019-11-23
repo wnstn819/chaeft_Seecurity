@@ -1,0 +1,13 @@
+<resources>
+
+
+        <string name="admob_app_id">ca-app-pub-5279779414104067~8738485205</string>
+
+        <string name="banner_ad_unit_id">ca-app-pub-5279779414104067/6509258752</string>
+
+        <string name="banner_ad_unit_id_for_test">ca-app-pub-3940256099942544/6300978111</string>
+
+
+
+    <string name="app_name">SeeCurity</string>
+</resources>

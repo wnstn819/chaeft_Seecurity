@@ -1,0 +1,237 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:layout_gravity="center"
+    android:background="@drawable/rounded_activity"
+    >
+
+    <TextView
+        android:id="@+id/tv_shortUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@+id/tv_shortUrl"
+        android:background="@color/colorLightGray"
+        />
+
+    <TextView
+        android:id="@+id/tv_oUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_shortUrl"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlack"
+        android:text="연결될 URL"/>
+    <TextView
+        android:id="@+id/tv_reportLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/tv_danger"
+        android:layout_below="@+id/tv_shortUrl"
+        android:textSize="18sp"
+        android:textColor="@color/colorReport"/>
+
+    <TextView
+        android:id="@+id/tv_safe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/tv_oUrl"
+        android:layout_below="@id/tv_shortUrl"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/colorGreen"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        android:text="[안전]" />
+    <TextView
+        android:id="@+id/tv_danger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/tv_oUrl"
+        android:layout_below="@id/tv_shortUrl"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/colorReport"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        android:text="[위험]" />
+    <TextView
+        android:id="@+id/tv_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/tv_oUrl"
+        android:layout_below="@id/tv_shortUrl"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        android:text="[주의]" />
+
+    <TextView
+        android:id="@+id/tv_originUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_below="@+id/tv_oUrl"
+        android:textSize="16sp"
+        android:textColor="@color/colorDarkGray"
+        android:ellipsize="end"
+        android:maxLines="5"/>
+
+    <TextView
+        android:id="@+id/tv_pageInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_originUrl"
+        android:textSize="18sp"
+        android:textColor="@color/colorBlack"
+        android:text="페이지 분석 결과"/>
+    <TextView
+        android:id="@+id/tv_pageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/tv_pageInfo"
+        android:textSize="17sp"
+        android:textColor="@color/colorDarkGray"
+        android:ellipsize="end"
+        android:maxLines="2"
+        />
+
+    <TextView
+        android:id="@+id/tv_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/tv_pageName"
+        android:textSize="16sp"
+        android:textColor="@color/colorDarkGray"
+        android:text="잠재적 위험 URL : "/>
+    <TextView
+        android:id="@+id/tv_fileCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/tv_pageName"
+        android:layout_toEndOf="@id/tv_file"
+        android:textSize="16sp"
+        android:textColor="@color/colorDarkGray"/>
+
+    <Button
+        android:id="@+id/bt_redirect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_pageName"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@id/tv_fileCount"
+        android:background="@color/colorWhite"
+        android:text="잠재적 위험 URL 리스트"
+        android:textColor="@color/colorButton"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/tv_file"
+        android:textSize="16sp"
+        android:textColor="@color/colorDarkGray"
+        android:text="팝업 창 : "/>
+
+    <TextView
+        android:id="@+id/tv_downCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_file"
+        android:layout_toEndOf="@id/tv_down"
+        android:textSize="16sp"
+        android:textColor="@color/colorDarkGray"/>
+
+    <TextView
+        android:id="@+id/tv_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/tv_down"
+        android:textSize="16sp"
+        android:textColor="@color/colorDarkGray"
+        android:text="페이지 자동 이동 의심 : "/>
+
+    <TextView
+        android:id="@+id/tv_urlCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_down"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@id/tv_url"
+        android:textSize="16sp"
+        android:textColor="@color/colorDarkGray"/>
+
+    <Button
+        android:id="@+id/bt_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_url"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@android:color/background_light"
+        android:text="연결"
+        android:textColor="@color/colorButton"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_url"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorWhite"
+        android:text="취소"
+        android:textColor="@color/colorButton"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bt_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_url"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorWhite"
+        android:text="신고"
+        android:textColor="@color/colorReport"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
